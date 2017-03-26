@@ -4,6 +4,9 @@ const expect = require("chai").expect;
 const KanaMojiConv = require("../index").KanaMojiConv;
 
 describe("KanaMojiConv", () => {
+  const hiraSmallA = String.fromCharCode(0x3041);
+  const kataSmallA = String.fromCharCode(0x30a1);
+
   it("canary test", () =>  {
     expect(KanaMojiConv).to.be.an("function");
   });
@@ -22,6 +25,20 @@ describe("KanaMojiConv", () => {
       const table = KanaMojiConv.generateConvTable(["a", "b"], ["A", "B"]);
       const expected = { "a": "A", "b": "B" };
       expect(table).to.deep.equal(expected);
+    });
+  });
+
+  describe("toKataTable", () => {
+    it("expects to return kataSmallA when hiraSmallA is given", () => {
+      const table = KanaMojiConv.toKataTable;
+      expect(table[hiraSmallA]).to.deep.equal(kataSmallA);
+    });
+  });
+
+  describe("toKataTable", () => {
+    it("expects to return hiraSmallA when kataSmallA is given", () => {
+      const table = KanaMojiConv.toHiraTable;
+      expect(table[kataSmallA]).to.deep.equal(hiraSmallA);
     });
   });
 });
