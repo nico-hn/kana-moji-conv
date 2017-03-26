@@ -1,0 +1,22 @@
+{
+  "name": "kana-moji-conv",
+  "version": "0.1.0",
+  "description": "Convert Hiragana to Katakana or vice versa",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.18.0",
+    "mocha": "^3.2.0"
+  },
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint *.js lib/*.js test/*.js"
+  },
+  "files": [
+    "LICENSE",
+    "lib"
+  ],
+  "author": "HASHIMOTO, Naoki",
+  "license": "MIT"
+}
