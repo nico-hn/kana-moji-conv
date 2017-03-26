@@ -9,7 +9,7 @@ describe("KanaMojiConv", () => {
   });
 
   describe("charCodesToArray", () => {
-    it("expect to return characters between given charCodes", () => {
+    it("expects to return characters between given charCodes", () => {
       const start = "a".charCodeAt(0);
       const end = "c".charCodeAt(0);
       const result = KanaMojiConv.charCodesToArray(start, end);
@@ -18,7 +18,7 @@ describe("KanaMojiConv", () => {
   });
 
   describe("generateConvTable", () => {
-    it("expect to return an object", () => {
+    it("expects to return an object", () => {
       const table = KanaMojiConv.generateConvTable(["a", "b"], ["A", "B"]);
       const expected = { "a": "A", "b": "B" };
       expect(table).to.deep.equal(expected);
