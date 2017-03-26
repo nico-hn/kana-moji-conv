@@ -16,4 +16,12 @@ describe("KanaMojiConv", () => {
       expect(result).to.deep.equal(["a", "b", "c"]);
     });
   });
+
+  describe("generateConvTable", () => {
+    it("expect to return an object", () => {
+      const table = KanaMojiConv.generateConvTable(["a", "b"], ["A", "B"]);
+      const expected = { "a": "A", "b": "B" };
+      expect(table).to.deep.equal(expected);
+    });
+  });
 });
