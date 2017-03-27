@@ -92,4 +92,13 @@ describe("KanaMojiConv", () => {
       expect(KanaMojiConv.toHiragana(kataIroha)).to.equal(hiraIroha);
     });
   });
+
+  describe("toKatakana", () => {
+    it("expects to convert a string from hiragana to katakana", () => {
+      const hiraViolin = "う゛ぃおろん";
+      const kataViolin = "ヴィオロン";
+
+      expect(KanaMojiConv.toKatakana(hiraViolin)).to.equal(kataViolin);
+    });
+  });
 });
