@@ -83,4 +83,13 @@ describe("KanaMojiConv", () => {
       expect(kataVu.match(KanaMojiConv.HIRA_REGEX)).to.be.a("null");
     });
   });
+
+  describe("toHiragana", () => {
+    it("expects to convert a string from katakana to hiragana", () => {
+      const kataIroha = "イロハニホヘト";
+      const hiraIroha = "いろはにほへと";
+
+      expect(KanaMojiConv.toHiragana(kataIroha)).to.equal(hiraIroha);
+    });
+  });
 });
