@@ -53,4 +53,14 @@ describe("KanaMojiConv", () => {
       expect(table[kataVu]).to.deep.equal(hiraVu);
     });
   });
+
+  describe("KATA_REGEX", () => {
+    it("expects to match kataSmallA", () => {
+      expect(kataSmallA.match(KanaMojiConv.KATA_REGEX)).to.deep.equal([kataSmallA]);
+    });
+
+    it("does not expect to match hiraSmallA", () => {
+      expect(hiraSmallA.match(KanaMojiConv.KATA_REGEX)).to.be.a('null');
+    });
+  });
 });
