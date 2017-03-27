@@ -8,6 +8,7 @@ describe("KanaMojiConv", () => {
   const kataSmallA = String.fromCharCode(0x30a1);
   const hiraVu = String.fromCharCode(0x3094);
   const kataVu = String.fromCharCode(0x30f4);
+  const hiraUwithDakuten = "\u3046\u309b";
 
   it("canary test", () =>  {
     expect(KanaMojiConv).to.be.an("function");
@@ -61,6 +62,20 @@ describe("KanaMojiConv", () => {
 
     it("does not expect to match hiraSmallA", () => {
       expect(hiraSmallA.match(KanaMojiConv.KATA_REGEX)).to.be.a('null');
+    });
+  });
+
+  describe("HIRA_REGEX", () => {
+    it("expects to match hiraUwithDakuten", () => {
+      expect(hiraUwithDakuten.match(KanaMojiConv.HIRA_REGEX)).to.deep.equal([hiraUwithDakuten]);
+    });
+
+    it ("expects to match hiraVu", () => {
+      expect(hiraVu.match(KanaMojiConv.HIRA_REGEX)).to.deep.equal([hiraVu]);
+    });
+
+    it("does not expect to match kataVu", () => {
+      expect(kataVu.match(KanaMojiConv.HIRA_REGEX)).to.be.a('null');
     });
   });
 });
