@@ -66,7 +66,7 @@ describe("KanaMojiConv", () => {
     });
 
     it("does not expect to match hiraSmallA", () => {
-      expect(hiraSmallA.match(KanaMojiConv.KATA_REGEX)).to.be.a('null');
+      expect(hiraSmallA.match(KanaMojiConv.KATA_REGEX)).to.be.a("null");
     });
   });
 
@@ -80,7 +80,7 @@ describe("KanaMojiConv", () => {
     });
 
     it("does not expect to match kataVu", () => {
-      expect(kataVu.match(KanaMojiConv.HIRA_REGEX)).to.be.a('null');
+      expect(kataVu.match(KanaMojiConv.HIRA_REGEX)).to.be.a("null");
     });
   });
 });
