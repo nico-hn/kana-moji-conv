@@ -41,6 +41,11 @@ describe("KanaMojiConv", () => {
       const table = KanaMojiConv.toKataTable;
       expect(table[hiraVu]).to.deep.equal(kataVu);
     });
+
+    it("expects to return kataVu when hiraUwithDakuten is given", () => {
+      const table = KanaMojiConv.toKataTable;
+      expect(table[hiraUwithDakuten]).to.deep.equal(kataVu);
+    });
   });
 
   describe("toKataTable", () => {
