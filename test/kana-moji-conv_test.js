@@ -31,6 +31,18 @@ describe("KanaMojiConv", () => {
     });
   });
 
+  describe("mergeTables", () => {
+    it("expects to merge an array of tables", () => {
+      const tables = [
+        { "a": "A", "b": "B" }, { "c": "C", "d": "D" }
+      ];
+      const mergedTable = {
+        "a": "A", "b": "B", "c": "C", "d": "D"
+      };
+      expect(KanaMojiConv.mergeTables(tables)).to.deep.equal(mergedTable);
+    });
+  });
+
   describe("toKataTable", () => {
     it("expects to return kataSmallA when hiraSmallA is given", () => {
       const table = KanaMojiConv.toKataTable;
