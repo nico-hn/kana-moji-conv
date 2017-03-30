@@ -113,4 +113,13 @@ describe("KanaMojiConv", () => {
       expect(KanaMojiConv.toKatakana(hiraViolin)).to.equal(kataViolin);
     });
   });
+
+  describe("toggleKana", () => {
+    it("expects to toggle hiragana and katakana", () => {
+      const kata = "クロック・ムッシュー";
+      const hira = "くろっく・むっしゅー";
+      expect(KanaMojiConv.toggleKana(kata)).to.equal(hira);
+      expect(KanaMojiConv.toggleKana(hira)).to.equal(kata);
+    });
+  });
 });
