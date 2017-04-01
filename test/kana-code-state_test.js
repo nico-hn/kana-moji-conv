@@ -57,5 +57,11 @@ describe("KanaCodeState", () => {
         expect(codeState.unfixTable["kk"]).to.equal("k");
       });
     });
+
+    describe("MAX_CODE_LENGTH", () => {
+      it("expects to be 3", () => {
+        expect(codeState.MAX_CODE_LENGTH).to.equal(3);
+      });
+    });
   });
 });
