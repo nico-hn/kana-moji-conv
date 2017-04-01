@@ -43,5 +43,19 @@ describe("KanaCodeState", () => {
         expect(codeState.fixTable["kk"]).to.equal("っ");
       });
     });
+
+    describe("unfixTable", () => {
+      it("expects not to return a truthy value when 'a' is given", () => {
+        expect(codeState.unfixTable["a"]).to.not.be.ok;
+      });
+
+      it("expects not to return a truthy value when 'xtu' is given", () => {
+        expect(codeState.unfixTable["xtu"]).to.not.be.ok;
+      });
+
+      it("expects to return 'k' when 'kk' is given", () => {
+        expect(codeState.unfixTable["kk"]).to.equal("k");
+      });
+    });
   });
 });
