@@ -24,5 +24,24 @@ describe("KanaCodeState", () => {
         expect(codeState.unfixTable).to.not.be.empty;
       });
     });
+
+    describe("fixTable", () => {
+      beforeEach(() => {
+        codeState = new KanaCodeState;
+        codeState.setupCodeTable(jsonData);
+      });
+
+      it("expects to return 'a' in Hiragana when 'a' is given", () => {
+        expect(codeState.fixTable["a"]).to.equal("あ");
+      });
+
+      it("expects to return hatsuon in Hiragana when 'xtu' is given", () => {
+        expect(codeState.fixTable["xtu"]).to.equal("っ");
+      });
+
+      it("expects to return hatsuon in Hiragana when 'kk' is given", () => {
+        expect(codeState.fixTable["kk"]).to.equal("っ");
+      });
+    });
   });
 });
