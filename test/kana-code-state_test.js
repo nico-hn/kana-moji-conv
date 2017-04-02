@@ -77,5 +77,23 @@ describe("KanaCodeState", () => {
         expect(codeState.canConvert("xyz")).to.equal(KanaCodeState.NO);
       });
     });
+
+    describe("toFixedKana", () => {
+      it("expects to return 'あ' when 'a' is given", () => {
+        expect(codeState.toFixedKana("a")).to.equal("あ");
+      });
+
+      it("expects to return 'か' when 'ka' is given", () => {
+        expect(codeState.toFixedKana("ka")).to.equal("か");
+      });
+
+      it("expects to return 'っ' when 'kk' is given", () => {
+        expect(codeState.toFixedKana("kk")).to.equal("っ");
+      });
+
+      it("expects to return 'xyz' when 'xyz' is given", () => {
+        expect(codeState.toFixedKana("xyz")).to.equal("xyz");
+      });
+    });
   });
 });
