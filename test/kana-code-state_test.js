@@ -114,4 +114,42 @@ describe("KanaCodeState", () => {
       });
     });
   });
+
+  context("when roma-kana-table.json is given", () => {
+    const jsonData = require("../lib/jis-kana-table.json");
+    let codeState;
+
+    beforeEach(() => {
+      codeState = new KanaCodeState;
+      codeState.setupCodeTable(jsonData);
+    });
+
+    describe("toFixedKana", () => {
+      it("expects to return 'な' when 'u' is given", () => {
+        expect(codeState.toFixedKana("u")).to.equal("な");
+      });
+
+      it("expects to return 't' when 't' is given", () => {
+        expect(codeState.toFixedKana("t")).to.equal("t");
+      });
+
+      it("expects to return 'が' when 'か'' is given", () => {
+        expect(codeState.toFixedKana("か'")).to.equal("が");
+      });
+    });
+
+    describe("toUnfixedKana", () => {
+      it("expects to return '' when 'u' is given", () => {
+        expect(codeState.toUnfixedKana("u")).to.equal("");
+      });
+
+      it("expects to return 'か' when 't' is given", () => {
+        expect(codeState.toUnfixedKana("t")).to.equal("か");
+      });
+
+      it("expects to return '' when 'か'' is given", () => {
+        expect(codeState.toUnfixedKana("か'")).to.equal("");
+      });
+    });
+  });
 });
