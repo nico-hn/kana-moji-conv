@@ -63,5 +63,19 @@ describe("KanaCodeState", () => {
         expect(codeState.MAX_CODE_LENGTH).to.equal(3);
       });
     });
+
+    describe("canConvert", () => {
+      it("expects to return 'YES' when 'a' is given", () => {
+        expect(codeState.canConvert("a")).to.equal(KanaCodeState.YES);
+      });
+
+      it("expects to return 'NOT_YET' when 'ky' is given", () => {
+        expect(codeState.canConvert("ky")).to.equal(KanaCodeState.NOT_YET);
+      });
+
+      it("expects to return 'NO' when 'xyz' is given", () => {
+        expect(codeState.canConvert("xyz")).to.equal(KanaCodeState.NO);
+      });
+    });
   });
 });
