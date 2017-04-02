@@ -95,5 +95,23 @@ describe("KanaCodeState", () => {
         expect(codeState.toFixedKana("xyz")).to.equal("xyz");
       });
     });
+
+    describe("toUnfixedKana", () => {
+      it("expects to return '' when 'a' is given", () => {
+        expect(codeState.toUnfixedKana("a")).to.equal("");
+      });
+
+      it("expects to return '' when 'ka' is given", () => {
+        expect(codeState.toUnfixedKana("ka")).to.equal("");
+      });
+
+      it("expects to return 'k' when 'kk' is given", () => {
+        expect(codeState.toUnfixedKana("kk")).to.equal("k");
+      });
+
+      it("expects to return '' when 'xyz' is given", () => {
+        expect(codeState.toUnfixedKana("xyz")).to.equal("");
+      });
+    });
   });
 });
