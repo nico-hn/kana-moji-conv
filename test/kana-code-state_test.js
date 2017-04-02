@@ -115,7 +115,7 @@ describe("KanaCodeState", () => {
     });
   });
 
-  context("when roma-kana-table.json is given", () => {
+  context("when jis-kana-table.json is given", () => {
     const jsonData = require("../lib/jis-kana-table.json");
     let codeState;
 
